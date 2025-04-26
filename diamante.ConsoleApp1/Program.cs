@@ -4,7 +4,10 @@
     {
         while (true)
         {
+            // função responsavel pela filtragem do valor que sera inserido pelo usuario
             int valorUsuarioDigitou = ValorUsuarioDigitou(0);
+
+            Diamante(valorUsuarioDigitou);
 
             Console.ReadLine();
         }
@@ -40,5 +43,16 @@
             }
         } while (valor % 2 == 0);
         return valor;
+    }
+
+    static void Diamante(int desenhoDasLinhas)
+    {
+        // Armazenadores das linhas, o quantidade maximo desses armazenadores
+        // serao o valor impar que o usuario digitou
+        string[] geradorDeLinhas = new string[(desenhoDasLinhas / 2) + 1]; // essa divisao com a soma da +1 é para que o contador não saia do range
+        string[] espacosNaEsquerda = new string[(desenhoDasLinhas / 2) + 1];
+
+
+        Console.ReadLine();
     }
 }
