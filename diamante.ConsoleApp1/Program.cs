@@ -52,6 +52,27 @@
         string[] geradorDeLinhas = new string[(desenhoDasLinhas / 2) + 1]; // essa divisao com a soma da +1 é para que o contador não saia do range
         string[] espacosNaEsquerda = new string[(desenhoDasLinhas / 2) + 1];
 
+        string meio = "-";
+
+
+        // Parte de cima do diamante. 
+        //- a quantidade de espacos do lado esquerdo é o que dará a impressao que sera um desenho de um diamante
+        for (int contadorLinhas = 0, contadorEspaco = (desenhoDasLinhas) / 2; contadorEspaco >= 0; contadorLinhas++, contadorEspaco--)
+        {
+            espacosNaEsquerda[contadorEspaco] = new string(' ', contadorEspaco);
+            geradorDeLinhas[contadorLinhas] = new string('-', contadorLinhas);
+
+            Console.WriteLine($"{espacosNaEsquerda[contadorEspaco]}{geradorDeLinhas[contadorLinhas]}{meio}{geradorDeLinhas[contadorLinhas]}");
+        }
+        // Parte de baixo do diamante. 
+        //- a quantidade de espacos estara aumentando, diferente do for de cima 
+        for (int contadorLinhas = (desenhoDasLinhas / 2) - 1, contadorEspaco = 1; contadorLinhas >= 0; contadorLinhas--, contadorEspaco++)
+        {
+            espacosNaEsquerda[contadorEspaco] = new string(' ', contadorEspaco);
+            geradorDeLinhas[contadorLinhas] = new string('-', contadorLinhas);
+
+            Console.WriteLine($"{espacosNaEsquerda[contadorEspaco]}{geradorDeLinhas[contadorLinhas]}{meio}{geradorDeLinhas[contadorLinhas]}");
+        }
 
         Console.ReadLine();
     }
