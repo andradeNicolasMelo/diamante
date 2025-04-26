@@ -19,6 +19,7 @@
             Console.WriteLine("Digite um valor impar: ");
             string strValor = Console.ReadLine()!;
 
+            // Criacao da linha de codigo responsavel por verificar se o valor é um numero
             bool sucesso = int.TryParse(strValor, out valor);
 
             if (!sucesso)
@@ -28,9 +29,9 @@
                 continue;
             }
 
-
             else
             {
+                // criacao do comparador responsavel por verificar se um numero é par
                 if (valor % 2 == 0)
                 {
                     Console.WriteLine("Isso não é um valor impar. Digite novamente: ");
